@@ -6,6 +6,8 @@ services:
     image: twentycrm/twenty:v1.16
     volumes:
       - twenty-server-data:/app/packages/twenty-server/.local-storage
+      - ./twenty-index.html:/app/packages/twenty-server/dist/front/index.html:ro
+      - ./twenty-bd-intelligence.user.js:/app/packages/twenty-server/dist/front/bd-intelligence.js:ro
     ports:
       - "3000:3000"
     environment:
